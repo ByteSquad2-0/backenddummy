@@ -5,10 +5,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {JWT_SECRET} = require('../keys');
 
-router.get('/',requireLogin,(req, res) => {
-  const user = req.user;
+router.get('/',(req, res) => {
   return res.status(200).json({
-    user,
+    message:"Hello. Please sign in."
   });
 });
 
