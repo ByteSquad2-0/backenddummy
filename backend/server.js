@@ -17,6 +17,8 @@ db.once('open', ()=>{
     console.log("database is connected successfully!")
 });
 
+mongoose.set('useFindAndModify', false);
+
 // initializing app
 app.use(cors());
 app.use(express.json());
@@ -25,7 +27,7 @@ app.use(express.json());
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 
-app.use('/products', productssRouter);
+app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
 // listning on the port
