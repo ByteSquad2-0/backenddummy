@@ -1,4 +1,4 @@
-const express=require('express')
+const express = require('express')
 const cors=require('cors')
 const mongoose = require('mongoose');
 const {MONGOURI} = require('./keys');
@@ -22,6 +22,8 @@ mongoose.set('useFindAndModify', false);
 // initializing app
 app.use(cors());
 app.use(express.json());
+app.use(require('./routes/users'));
+app.use(require('./routes/products'));
 
 // router
 const productsRouter = require('./routes/products');
