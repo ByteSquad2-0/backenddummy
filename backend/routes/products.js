@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const username = req.body.username;
   const description = req.body.description;
-  const pincode = Number(req.body.duration);
+  const pincode = Number(req.body.pincode);
   const date = Date.parse(req.body.date);
 
   const newProduct = new Product({
@@ -43,7 +43,7 @@ router.route('/update/:id').post((req, res) => {
         product.username = req.body.username;
         product.description = req.body.description;
         product.pincode = Number(req.body.pincode);
-        product.date = Date.parse(req.body.product);
+        product.date = Date.parse(req.body.date);
   
         product.save()
           .then(() => res.json('Product updated!'))
